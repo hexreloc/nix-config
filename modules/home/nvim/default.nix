@@ -49,7 +49,7 @@
       {
         plugin = toggleterm-nvim;
         type = "lua";
-        config = builtins.readFile ./plugin/toogleterm.lua;
+        config = builtins.readFile ./plugin/toggleterm.lua;
       }
 
       # Completion
@@ -65,6 +65,13 @@
         plugin = harpoon2;
         type="lua";
         config = builtins.readFile ./plugin/harpoon.lua;
+      }
+
+      #nerdTree
+      {
+        plugin = nerdtree;
+        type = "lua";
+        config = builtins.readFile ./plugin/tree.lua;
       }
 
       cmp_luasnip
