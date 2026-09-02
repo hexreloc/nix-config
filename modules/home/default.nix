@@ -6,6 +6,7 @@
         ./git.nix
         ./alacritty.nix
         ./tmux.nix
+        ./fastfetch.nix
 
 		./nvim
 
