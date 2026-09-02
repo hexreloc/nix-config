@@ -46,6 +46,12 @@
       # Lua development
       neodev-nvim
 
+      {
+        plugin = toggleterm-nvim;
+        type = "lua";
+        config = builtins.readFile ./plugin/toogleterm.lua;
+      }
+
       # Completion
       {
 

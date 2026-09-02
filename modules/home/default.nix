@@ -5,6 +5,7 @@
         ./files.nix
         ./git.nix
         ./alacritty.nix
+        ./tmux.nix
 
 		./nvim
 
