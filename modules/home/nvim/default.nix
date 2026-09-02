@@ -37,11 +37,11 @@
       }
 
       # Theme
-      {
-        plugin = gruvbox-nvim;
-        type = "viml";
-        config = "colorscheme gruvbox";
-      }
+      # {
+      #   plugin = gruvbox-nvim;
+      #   type = "viml";
+      #   config = "colorscheme gruvbox";
+      # }
 
       # Lua development
       neodev-nvim
