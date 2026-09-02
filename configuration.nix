@@ -1,5 +1,5 @@
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -7,8 +7,10 @@
        ./hardware-configuration.nix
        ./modules/system
     ];
-  nixpkgs.config.allowUnfree = true;
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
+   nixpkgs.config.allowUnfree = true;
+
+   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
    environment.systemPackages = with pkgs; [
      wget
      git
@@ -19,6 +21,6 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
      xclip
    ];
 
-system.stateVersion = "26.05"; # Did you read the comment?
+  system.stateVersion = "26.05";
 
 }
