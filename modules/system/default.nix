@@ -6,6 +6,7 @@
 	./locale.nix
 	./users.nix
 	./desktop.nix
-	./audio.nix
+    ./audio.nix
+    ./fonts.nix
 	];
 }
