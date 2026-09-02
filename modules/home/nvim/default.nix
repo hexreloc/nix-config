@@ -15,7 +15,7 @@
       lua-language-server
       nixd
       clang-tools
-
+      basedpyright
       xclip
       wl-clipboard
     ];
