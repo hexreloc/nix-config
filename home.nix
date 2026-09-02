@@ -7,7 +7,6 @@
 	home.username = "hex";
 	home.homeDirectory = "/home/hex";
 	home.packages = with pkgs;[
-		alacritty #alacritty
 		firefox #browser
 		pavucontrol # volume control
         i3status #statusbar
