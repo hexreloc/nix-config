@@ -48,9 +48,17 @@
 
       # Completion
       {
+
         plugin = nvim-cmp;
         type = "lua";
         config = builtins.readFile ./plugin/cmp.lua;
+      }
+
+      #harpoon
+      {
+        plugin = harpoon2;
+        type="lua";
+        config = builtins.readFile ./plugin/harpoon.lua;
       }
 
       cmp_luasnip
