@@ -2,7 +2,6 @@ local harpoon = require("harpoon")
 
 harpoon:setup()
 
-vim.keymap.del("n", "<leader>a")
 
 vim.keymap.set("n", "<leader>a", function()
 	harpoon:list():add()
