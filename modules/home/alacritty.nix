@@ -6,15 +6,15 @@
     settings = {
       font = {
         normal = {
-          family = "JetBrainsMono Nerd Font";
+          family = "Iosevka Nerd Font ";
         };
 
         bold = {
-          family = "JetBrainsMono Nerd Font";
+          family = "Iosevka Nerd Font ";
         };
 
         italic = {
-          family = "JetBrainsMono Nerd Font";
+          family = "Iosevka Nerd Font ";
         };
       };
     };
