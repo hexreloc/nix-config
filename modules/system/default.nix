@@ -8,5 +8,9 @@
 	./desktop.nix
     ./audio.nix
     ./fonts.nix
+    ./tlp.nix
+    ./game.nix
+
+    ./i3
 	];
 }
