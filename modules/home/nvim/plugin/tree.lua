@@ -1,16 +1,23 @@
-local nerdtree = require('nerdtree')
+vim.keymap.set("n", "<leader>n", "<cmd>NERDTreeFocus<CR>", {
+	desc = "NERDTree focus",
+})
 
-nerdtree:setup({})
+vim.keymap.set("n", "<C-n>", "<cmd>NERDTreeToggle<CR>", {
+	desc = "NERDTree toggle",
+})
 
-vim.keymap.set("n", "<leader>n", function ()
-	nerdtree:NERDTreeFocus()
-end, {})
+vim.keymap.set("n", "<C-f>", "<cmd>NERDTreeFind<CR>", {
+	desc = "NERDTree find",
+})
 
-vim.keymap.set("n", "<C-n>", function ()
-	nerdtree:NERDTreeToggle()
-end, {})
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", {
+	desc = "Close tab",
+})
 
-vim.keymap.set("n", "<C-f>", function ()
-	nerdtree:NERDTreeFind()
-end, {})
+vim.keymap.set("n", "<leader>to", ":tabonly<CR>", {
+	desc = "Close other tabs",
+})
 
+vim.keymap.set("n", "<leader>tn", ":tabnew<CR>", {
+	desc = "New tab",
+})
