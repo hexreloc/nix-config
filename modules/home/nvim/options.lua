@@ -17,6 +17,11 @@ vim.o.termguicolors = true
 
 vim.o.mouse = 'a'
 
+vim.opt.conceallevel = 2  -- or 1
+
+vim.opt.wrap = true
+vim.opt.breakindent = true
+
 -- Diagnostics
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, {
   desc = 'Open diagnostics',
