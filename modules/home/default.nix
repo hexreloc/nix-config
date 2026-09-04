@@ -7,6 +7,7 @@
         ./alacritty.nix
         ./tmux.nix
         ./fastfetch.nix
+        ./i3status-rust.nix
 
 		./nvim
 
