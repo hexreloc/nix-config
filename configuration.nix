@@ -19,6 +19,9 @@
      brightnessctl
      pamixer
      xclip
+     pkgs.nvtopPackages.full
+     powertop
+     lm_sensors
    ];
 
   system.stateVersion = "26.05";
