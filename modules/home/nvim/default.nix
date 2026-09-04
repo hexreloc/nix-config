@@ -18,6 +18,7 @@
       basedpyright
       xclip
       wl-clipboard
+      ripgrep
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -72,6 +73,12 @@
         plugin = nerdtree;
         type = "lua";
         config = builtins.readFile ./plugin/tree.lua;
+      }
+      #Obsidian Nvim
+      {
+        plugin = obsidian-nvim;
+        type = "lua";
+        config = builtins.readFile ./plugin/obsidian-nvim.lua;
       }
 
       cmp_luasnip
