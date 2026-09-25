@@ -23,7 +23,7 @@ obsidian.setup({
   workspaces = {
     {
       name = "notes",
-      path = "~/brain",
+      path = "~/personal/brain",
     },
   },
 })

@@ -2,7 +2,7 @@ set $mod Mod4
 
 font pango:Iosevka Nerd Font 6
 
-exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --rate 60
+exec --no-startup-id xrandr --output eDP --mode 1920x1080 --rate 60
 exec --no-startup-id xset r rate 200 50
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -27,6 +27,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+b bar mode toggle
+bindsym $mod+Control+s exec --no-startup-id systemctl suspend
 
 
 bindsym $mod+j focus left

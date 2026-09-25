@@ -1,11 +1,16 @@
-{pkgs, ...}:
+{pkgs,inputs, ...}:
 
 {
 	imports = [
-		./modules/home
+      ./modules/home
+      inputs.zen-browser.homeModules.twilight
 	];
 	home.username = "hex";
-	home.homeDirectory = "/home/hex";
+    home.homeDirectory = "/home/hex";
+
+    programs.zen-browser = {
+      enable = true;
+    };
 	home.packages = with pkgs;[
 		firefox #browser
 		pavucontrol # volume control
@@ -16,6 +21,11 @@
         discord
         obsidian
         ripgrep
+        mission-center
+        yazi
+        brave # secondary browser
+        fzf
+        zed-editor #secondary text editor
 
         (pkgs.writeShellApplication {
           name = "ns";

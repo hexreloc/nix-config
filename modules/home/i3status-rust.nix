@@ -10,13 +10,8 @@
         }
         {
           block = "cpu";
-          interval = 60;
+          interval = 10;
           format = " $icon $utilization | ";
-        }
-        {
-          block = "temperature";
-          format = " $icon $max | ";
-          interval = 60;
         }
         {
           block = "sound";

@@ -3,15 +3,6 @@
     enable = true;
 
     settings = {
-      logo = {
-        source = "auto";
-        padding = {
-          top = 3;
-          right = 2;
-          left = 2;
-        };
-      };
-
       display = {
         separator = " ";
         color = {
@@ -48,12 +39,6 @@
         }
 
         {
-          type = "command";
-          key = "│   Age       │";
-          text = "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days";
-        }
-
-        {
           type = "packages";
           key = "│ 󰏓  Packages  │";
         }
@@ -78,22 +63,6 @@
           type = "terminal";
           key = "│   Terminal  │";
         }
-
-        {
-          type = "terminalfont";
-          key = "│ 󰛖  Font      │";
-        }
-
-        {
-          type = "theme";
-          key = "│ 󰉼  Theme     │";
-        }
-
-        {
-          type = "icons";
-          key = "│ 󰀻  Icons     │";
-        }
-
         {
           type = "custom";
           key = "├──────────────┤";
@@ -130,23 +99,6 @@
         {
           type = "battery";
           key = "│ 󰁹  Battery   │";
-        }
-
-        {
-          type = "custom";
-          key = "├──────────────┤";
-          format = "";
-        }
-
-        {
-          type = "localip";
-          key = "│ 󰩟  Local IP  │";
-          showIpv4 = true;
-        }
-
-        {
-          type = "locale";
-          key = "│ 󰗊  Locale    │";
         }
 
         {
