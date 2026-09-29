@@ -4,8 +4,6 @@
   programs.neovim = {
     enable = true;
 
-    viAlias = true;
-    vimAlias = true;
     vimdiffAlias = true;
 
     withRuby = false;
@@ -22,29 +20,18 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
-
-      # LSP
       {
         plugin = nvim-lspconfig;
         type = "lua";
         config = builtins.readFile ./plugin/lsp.lua;
       }
 
-      # Comments
       {
         plugin = comment-nvim;
         type = "lua";
         config = ''require("Comment").setup()'';
       }
 
-      # Theme
-      # {
-      #   plugin = gruvbox-nvim;
-      #   type = "viml";
-      #   config = "colorscheme gruvbox";
-      # }
-
-      # Lua development
       neodev-nvim
 
       {
@@ -53,28 +40,24 @@
         config = builtins.readFile ./plugin/toggleterm.lua;
       }
 
-      # Completion
       {
-
         plugin = nvim-cmp;
         type = "lua";
         config = builtins.readFile ./plugin/cmp.lua;
       }
 
-      #harpoon
       {
         plugin = harpoon2;
-        type="lua";
+        type = "lua";
         config = builtins.readFile ./plugin/harpoon.lua;
       }
 
-      #nerdTree
       {
         plugin = nerdtree;
         type = "lua";
         config = builtins.readFile ./plugin/tree.lua;
       }
-      #Obsidian Nvim
+
       {
         plugin = obsidian-nvim;
         type = "lua";
@@ -86,20 +69,25 @@
       luasnip
       friendly-snippets
 
-      # Telescope
       {
         plugin = telescope-nvim;
         type = "lua";
         config = builtins.readFile ./plugin/telescope.lua;
       }
 
-      telescope-fzf-native-nvim
+      plenary-nvim
+      nui-nvim
 
-      # Statusline / icons
+      {
+        plugin = leetcode-nvim;
+        type = "lua";
+        config = builtins.readFile ./plugin/leetcode.lua;
+      }
+
+      telescope-fzf-native-nvim
       lualine-nvim
       nvim-web-devicons
 
-      # Treesitter
       {
         plugin = (
           nvim-treesitter.withPlugins (p: [
@@ -117,8 +105,8 @@
         config = builtins.readFile ./plugin/treesitter.lua;
       }
 
-      # Nix filetype support
       vim-nix
+      vim-multiple-cursors
     ];
 
     initLua = ''
@@ -126,4 +114,3 @@
     '';
   };
 }
-

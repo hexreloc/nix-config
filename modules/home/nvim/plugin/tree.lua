@@ -2,7 +2,7 @@ vim.keymap.set("n", "<leader>n", "<cmd>NERDTreeFocus<CR>", {
 	desc = "NERDTree focus",
 })
 
-vim.keymap.set("n", "<C-n>", "<cmd>NERDTreeToggle<CR>", {
+vim.keymap.set("n", "<C-c>", "<cmd>NERDTreeToggle<CR>", {
 	desc = "NERDTree toggle",
 })
 
