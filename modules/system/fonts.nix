@@ -7,5 +7,6 @@
     nerd-fonts.symbols-only
     nerd-fonts.iosevka
     hack-font
+    iosevka
   ];
 }
