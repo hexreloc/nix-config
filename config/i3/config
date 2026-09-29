@@ -1,6 +1,14 @@
 set $mod Mod4
 
-font pango:Iosevka Nerd Font 6
+font pango:Iosevka 10
+
+#                     border    backgr.   text      indicator  child_border
+client.focused          #333333  #1a1a1a  #e0e0e0  #555555    #1a1a1a
+client.focused_inactive #222222  #121212  #a0a0a0  #333333    #121212
+client.unfocused        #1a1a1a  #0a0a0a  #666666  #222222    #0a0a0a
+client.urgent           #cc4444  #1a1a1a  #ffffff  #cc4444    #1a1a1a
+client.placeholder      #000000  #0a0a0a  #ffffff  #000000    #0a0a0a
+client.background       #0a0a0a
 
 exec --no-startup-id xrandr --output eDP --mode 1920x1080 --rate 60
 exec --no-startup-id xset r rate 200 50
@@ -8,7 +16,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
-exec --no-startup-id feh --bg-fill ~/nix-config/wallpapers/nixos.png
+exec --no-startup-id feh --bg-fill ~/nix-config/wallpapers/wallpaper2.png
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
@@ -27,6 +35,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+b bar mode toggle
+bindsym $mod+Shift+b exec --no-startup-id pkill -f i3status-rs
 bindsym $mod+Control+s exec --no-startup-id systemctl suspend
 
 
@@ -117,5 +126,17 @@ bar {
 		position bottom
 		font pango:JetBrainsMono Nerd Font 10
         status_command i3status-rs ~/.config/i3status-rust/config-default.toml
+		colors {
+        background          #0a0a0a
+        statusline          #c0c0c0
+        separator           #2a2a2a
+
+        #                      border    backgr.   text
+        focused_workspace      #333333   #1a1a1a   #e0e0e0
+        active_workspace       #222222   #121212   #a0a0a0
+        inactive_workspace     #1a1a1a   #0a0a0a   #666666
+        urgent_workspace       #cc4444   #1a1a1a   #ffffff
+        binding_mode           #cc4444   #1a1a1a   #ffffff
+    }
 }
 
