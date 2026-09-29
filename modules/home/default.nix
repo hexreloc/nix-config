@@ -4,15 +4,17 @@
     ./theme.nix
     ./files.nix
     ./git.nix
-    ./alacritty.nix
+    ./alacritty
     ./tmux.nix
     ./fastfetch.nix
     ./i3status-rust.nix
     ./flameshot.nix
     ./foot.nix
     ./picom.nix
-
+    ./helix.nix
+    ./waybar.nix
+    ./dunst.nix
+    ./hyprland.nix
     ./nvim
-
   ];
 }
