@@ -6,7 +6,6 @@
 
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=14";
         pad = "10x10";
       };
 

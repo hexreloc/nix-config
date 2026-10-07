@@ -6,7 +6,7 @@
     historyLimit = 5000;
 
     extraConfig = ''
-      set -g status-position bottom
+      set -g status-position top
       set -g status-right ""
 
       set -g set-titles on
@@ -15,7 +15,7 @@
       set -g status-style "bg=black fg=white"
       set -g window-status-last-style "bg=black fg=white"
       set -g window-status-current-style "bg=black fg=white"
-      set -g window-status-separator ";;"
+      set -g window-status-separator " "
 
       set -g default-terminal "xterm-256color"
       set -as terminal-features ",xterm*:RGB"

@@ -8,13 +8,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  programs.dconf.enable = true;
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  # programs.dconf.enable = true;
 
   services.upower.enable = true;
+  services.power-profiles-daemon.enable = false;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -31,6 +28,9 @@
     dconf
     lm_sensors
     docker-compose
+    xinit
+    man-pages
+    man-pages-posix
   ];
 
   swapDevices = [
@@ -52,15 +52,14 @@
     enable = true;
   };
 
-  services.flatpak.enable = true;
-  xdg.portal = {
+   services.flatpak.enable = true;
+   xdg.portal = {
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];
     config = {
       common.default = [ "gtk" ];
-      hyprland.default = [ "hyprland" "gtk" ];
     };
   };
 

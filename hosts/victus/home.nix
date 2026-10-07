@@ -13,8 +13,21 @@
     enable = true;
   };
 
+ 
+
+
   home.packages = with pkgs; [
-    fuzzel
+    emacs
+    symbola
+    pandoc
+    shellcheck
+
+
+    fd
+    code-cursor
+    obsidian
+    alacritty-theme
+    readest
     firefox
     pavucontrol
     i3status-rust
@@ -27,13 +40,16 @@
     brave
     fzf
     vim
-    rofi
-    antigravity-ide
     gcc
     cmake
     python3
-    uv
+    obs-studio
+    mpv
   ];
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 
   home.stateVersion = "25.11";
 }

@@ -1,6 +1,6 @@
 {
   imports = [
-    ./bash.nix
+    ./fish.nix
     ./theme.nix
     ./files.nix
     ./git.nix
@@ -13,8 +13,13 @@
     ./picom.nix
     ./helix.nix
     ./waybar.nix
-    ./dunst.nix
     ./hyprland.nix
     ./nvim
+    ./sway.nix
+
+    ./dunst.nix
+    ./tofi.nix
+    ./wlogout.nix
+    ./kitty.nix
   ];
 }

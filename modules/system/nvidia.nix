@@ -6,7 +6,7 @@
     enable32Bit = true;
   };
 
-  services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
+  services.xserver.videoDrivers = ["amdgpu" "nvidia" ];
 
   hardware.nvidia = {
     modesetting.enable = true;

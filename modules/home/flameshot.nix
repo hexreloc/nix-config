@@ -1,10 +1,13 @@
+{ config, lib, pkgs, ... }:
+
 {
   services.flameshot = {
     enable = true;
     settings.General = {
-      useX11LegacyScreenshot = true; 
+      useX11LegacyScreenshot = true;
       showStartupLaunchMessage = false;
-      saveLastRegion = true;
     };
   };
+
+  systemd.user.services.flameshot.Install.WantedBy = lib.mkForce [];
 }

@@ -13,7 +13,7 @@
       lua-language-server
       nixd
       clang-tools
-      basedpyright
+      pyright
       xclip
       wl-clipboard
       ripgrep
@@ -33,6 +33,7 @@
       }
 
       neodev-nvim
+      yazi-nvim
 
       {
         plugin = toggleterm-nvim;
@@ -52,17 +53,6 @@
         config = builtins.readFile ./plugin/harpoon.lua;
       }
 
-      {
-        plugin = nerdtree;
-        type = "lua";
-        config = builtins.readFile ./plugin/tree.lua;
-      }
-
-      {
-        plugin = obsidian-nvim;
-        type = "lua";
-        config = builtins.readFile ./plugin/obsidian-nvim.lua;
-      }
 
       cmp_luasnip
       cmp-nvim-lsp
@@ -75,14 +65,14 @@
         config = builtins.readFile ./plugin/telescope.lua;
       }
 
+      {
+        plugin =tokyonight-nvim;
+        type = "lua";
+        config = builtins.readFile ./plugin/colorscheme.lua;
+      }
+
       plenary-nvim
       nui-nvim
-
-      {
-        plugin = leetcode-nvim;
-        type = "lua";
-        config = builtins.readFile ./plugin/leetcode.lua;
-      }
 
       telescope-fzf-native-nvim
       lualine-nvim
@@ -100,17 +90,25 @@
             p.tree-sitter-c
             p.tree-sitter-cpp
           ])
-        );
-        type = "lua";
-        config = builtins.readFile ./plugin/treesitter.lua;
-      }
+          );
+          type = "lua";
+          config = builtins.readFile ./plugin/treesitter.lua;
+        }
 
-      vim-nix
-      vim-multiple-cursors
-    ];
+        vim-nix
+        vim-multiple-cursors
+      ];
 
-    initLua = ''
+      initLua = ''
       ${builtins.readFile ./options.lua}
-    '';
-  };
-}
+
+      vim.opt.guicursor = "n-v-c:block,i-ci-ve:block,r-cr:block,o:block"
+
+      vim.diagnostic.config({
+        signs = false,
+      })
+
+      vim.opt.signcolumn = "no"
+      '';
+    };
+  }

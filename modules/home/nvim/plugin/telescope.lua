@@ -1,11 +1,11 @@
 require('telescope').setup({
 	file_ignore_patterns = {
-		"node_modules/.*",
+		"node_modules/*",
 		"%.env",
 		"yarn.lock",
-		"target/.*",
-		".git/.*",
-		"build/.*",
+		"target/*",
+		".git/*",
+		"build/*",
 		"./*",
 	},
 	extensions = {

@@ -56,6 +56,7 @@ vim.keymap.set('i', '<S-Down>', '<Esc>:m+<CR>a', {
   desc = 'Move line down',
 })
 
+
 -- Move selected lines
 vim.keymap.set('v', '<S-Up>', ":m '<-2<CR>gv=gv", {
   desc = 'Move selection up',
@@ -79,24 +80,45 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.cmd([[
-  highlight Normal       guibg=#000000 guifg=#bcbcbc
-  highlight NormalFloat  guibg=#000000 guifg=#bcbcbc
-  highlight CursorLine   guibg=#111111
-  highlight LineNr       guifg=#555555
-  highlight CursorLineNr guifg=#ffffff
-  highlight Comment      guifg=#666666
-  highlight String       guifg=#55aa55
-  highlight Function     guifg=#55aaaa
-  highlight Keyword      guifg=#cc55cc
-  highlight Type         guifg=#cdcd55
-  highlight Constant     guifg=#5555cc
-  highlight Number       guifg=#cc5555
-  highlight Identifier   guifg=#bcbcbc
-  highlight Statement    guifg=#cc5555
-  highlight Visual       guibg=#333333
-  highlight StatusLine   guibg=#111111 guifg=#bcbcbc
-  highlight VertSplit    guifg=#222222
-  highlight Pmenu        guibg=#111111 guifg=#bcbcbc
-  highlight PmenuSel     guibg=#333333 guifg=#ffffff
-]])
+
+-- Yazi
+vim.keymap.set({ 'n', 'v' }, '<leader>-', function()
+    vim.cmd('Yazi toggle')
+end, {
+    desc = 'Open yazi at the current file',
+})
+
+vim.keymap.set('n', '<leader>cw', function()
+    vim.cmd('Yazi cwd')
+end, {
+    desc = "Open the file manager in nvim's working directory",
+})
+
+vim.keymap.set('n', '<C-Up>', function()
+    vim.cmd('Yazi toggle')
+end, {
+    desc = 'Resume the last yazi session',
+})
+
+-- vim.cmd([[
+--   highlight Normal       guibg=#000000 guifg=#bcbcbc
+--   highlight NormalFloat  guibg=#000000 guifg=#bcbcbc
+--   highlight CursorLine   guibg=#111111
+--   highlight LineNr       guifg=#555555
+--   highlight CursorLineNr guifg=#ffffff
+--   highlight Comment      guifg=#666666
+--   highlight String       guifg=#55aa55
+--   highlight Function     guifg=#55aaaa
+--   highlight Keyword      guifg=#cc55cc
+--   highlight Type         guifg=#cdcd55
+--   highlight Constant     guifg=#5555cc
+--   highlight Number       guifg=#cc5555
+--   highlight Identifier   guifg=#bcbcbc
+--   highlight Statement    guifg=#cc5555
+--   highlight Visual       guibg=#333333
+--   highlight StatusLine   guibg=#111111 guifg=#bcbcbc
+--   highlight VertSplit    guifg=#222222
+--   highlight Pmenu        guibg=#111111 guifg=#bcbcbc
+--   highlight PmenuSel     guibg=#333333 guifg=#ffffff
+-- ]])
+--

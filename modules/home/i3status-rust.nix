@@ -6,31 +6,36 @@
       blocks = [
         {
           block = "battery";
-          format = " $icon $percentage | ";
+          format = "bat: $percentage ";
+          interval = 10;
         }
         {
           block = "cpu";
           interval = 10;
-          format = " $icon $utilization | ";
+          format = "cpu: $utilization ";
+        }
+        {
+          block = "temperature";
+          format = "tea: $max ";
         }
         {
           block = "sound";
-          format = " $icon $volume | ";
+          format = "snd: $volume ";
         }
         {
           block = "backlight";
-          format = " $icon $brightness | ";
+          format = "bri: $brightness ";
+        }
+        {
+          block = "net";
+          format = "ip: $ip ";
         }
         {
           block = "time";
           interval = 60;
-          format = " $timestamp.datetime(f:'%R') ";
+          format = "t: $timestamp.datetime(f:'%-I:%M %p') ";
         }
       ];
-
-      settings = {
-        theme = {};
-      };
     };
   };
 }

@@ -1,82 +1,52 @@
- { config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
-let
-  flavor = "mocha";
-  accent = "mauve";
-  flavorCap = "Mocha";
-  accentCap = "Mauve";
-  gtkThemeName = "Catppuccin-${flavorCap}-Standard-${accentCap}-Dark";
-  cursorThemeName = "Catppuccin-${flavorCap}-${accentCap}-Cursors";
-  iconThemeName = "Papirus-Dark";
-  cursorSize = 24;
-in
 {
-  gtk = {
+  stylix = {
     enable = true;
 
-    theme = {
-      name = gtkThemeName;
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ accent ];
-        size = "standard";
-        variant = flavor;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+
+    polarity = "dark";
+
+    fonts = {
+      monospace = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+      };
+
+      sizes = {
+      terminal = 12;
+      applications = 10;
+      desktop = 10;
+      popups = 10;
+    };
+
+      sansSerif = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+      };
+
+      serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
       };
     };
 
-    iconTheme = {
-      name = iconThemeName;
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = flavor;
-        accent = accent;
-      };
+    cursor = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+      size = 24;
     };
 
-    cursorTheme = {
-      name = cursorThemeName;
-      package = pkgs.catppuccin-cursors.${flavor + accentCap};
-      size = cursorSize;
+    targets = {
+      gtk.enable = true;
+      qt.enable = true;
+      alacritty.enable = true;
     };
-
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-
-    gtk4 = {
-      theme = config.gtk.theme;
-      extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
-      };
-    };
-  };
-
-  home.pointerCursor = {
-    name = cursorThemeName;
-    package = pkgs.catppuccin-cursors.${flavor + accentCap};
-    size = cursorSize;
-    gtk.enable = true;
-    x11.enable = true;
-  };
-
-  home.sessionVariables = {
-    GTK_THEME = gtkThemeName;
-    NIXOS_OZONE_WL = "1";
-    XCURSOR_THEME = cursorThemeName;
-    XCURSOR_SIZE = toString cursorSize;
-  };
-
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      gtk-theme = gtkThemeName;
-      icon-theme = iconThemeName;
-      cursor-theme = cursorThemeName;
-      cursor-size = cursorSize;
-    };
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk3";
-    style.name = "adwaita-dark";
   };
 }

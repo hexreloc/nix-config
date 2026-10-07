@@ -90,5 +90,11 @@ vim.lsp.enable({
 	'lua_ls',
 	'nixd',
 	'clangd',
-	'basedpyright',
+	'pyright',
 })
+
+vim.lsp.config('pyright', {
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+

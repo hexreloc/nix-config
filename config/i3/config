@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:Iosevka 10
+font pango:Iosevka 12
 
 #                     border    backgr.   text      indicator  child_border
 client.focused          #333333  #1a1a1a  #e0e0e0  #555555    #1a1a1a
@@ -10,13 +10,13 @@ client.urgent           #cc4444  #1a1a1a  #ffffff  #cc4444    #1a1a1a
 client.placeholder      #000000  #0a0a0a  #ffffff  #000000    #0a0a0a
 client.background       #0a0a0a
 
-exec --no-startup-id xrandr --output eDP --mode 1920x1080 --rate 60
+exec --no-startup-id xrandr --output eDP --mode 1920x1080 --rate 144
 exec --no-startup-id xset r rate 200 50
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
-exec --no-startup-id feh --bg-fill ~/nix-config/wallpapers/wallpaper2.png
+exec --no-startup-id feh --bg-fill ~/nix-config/wallpapers/wall.jpg
 
 set $refresh_i3status killall -SIGUSR1 i3status
 
@@ -32,10 +32,10 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 bindsym $mod+Return exec alacritty
+bindsym $mod+o exec emacs
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+b bar mode toggle
-bindsym $mod+Shift+b exec --no-startup-id pkill -f i3status-rs
+bindsym $mod+b exec --no-startup-id ~/.local/bin/toggle-i3bar
 bindsym $mod+Control+s exec --no-startup-id systemctl suspend
 
 
@@ -122,11 +122,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+gaps inner 5
+gaps outer 2
+for_window [class="^.*"] border pixel 0
+
+
 bar {
-		position bottom
-		font pango:JetBrainsMono Nerd Font 10
-        status_command i3status-rs ~/.config/i3status-rust/config-default.toml
-		colors {
+    mode invisible
+    hidden_state hide
+    position top
+    font pango:Iosevka  12
+    status_command i3status-rs ~/.config/i3status-rust/config-default.toml
+
+    colors {
         background          #0a0a0a
         statusline          #c0c0c0
         separator           #2a2a2a
@@ -139,4 +147,3 @@ bar {
         binding_mode           #cc4444   #1a1a1a   #ffffff
     }
 }
-
