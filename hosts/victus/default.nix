@@ -1,15 +1,19 @@
-{ pkgs, outputs, ... }:
-
 {
-  imports = [
-    ./hardware-configuration.nix
-  ] ++ (builtins.attrValues outputs.nixosModules);
+  pkgs,
+  outputs,
+  ...
+}: {
+  imports =
+    [
+      ./hardware-configuration.nix
+    ]
+    ++ (builtins.attrValues outputs.nixosModules);
 
   nixpkgs.config.allowUnfree = true;
 
   services.upower.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.systemPackages = with pkgs; [
     wget
@@ -48,14 +52,14 @@
     enable = true;
   };
 
-   services.flatpak.enable = true;
-   xdg.portal = {
+  services.flatpak.enable = true;
+  xdg.portal = {
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];
     config = {
-      common.default = [ "gtk" ];
+      common.default = ["gtk"];
     };
   };
 

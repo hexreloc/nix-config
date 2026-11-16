@@ -1,24 +1,26 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
-     heroic
-    
-     wineWow64Packages.staging
-     winetricks
+    heroic
 
-     protonup-qt
-    
-     gamemode
-     gamescope
-     mangohud
-    
-     vulkan-tools
+    wineWow64Packages.staging
+    winetricks
+
+    protonup-qt
+
+    gamemode
+    gamescope
+    mangohud
+
+    vulkan-tools
   ];
 
-   programs.gamemode.enable = true;
-  
-   programs.gamescope.enable = true;
+  programs.gamemode.enable = true;
+
+  programs.gamescope.enable = true;
 
   programs.steam = {
     enable = true;
@@ -29,5 +31,4 @@
 
     gamescopeSession.enable = true;
   };
-
 }

@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   stylix = {
     enable = true;
 
@@ -15,11 +13,11 @@
       };
 
       sizes = {
-      terminal = 12;
-      applications = 10;
-      desktop = 10;
-      popups = 10;
-    };
+        terminal = 12;
+        applications = 10;
+        desktop = 10;
+        popups = 10;
+      };
 
       sansSerif = {
         package = pkgs.nerd-fonts.jetbrains-mono;

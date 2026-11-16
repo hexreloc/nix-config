@@ -1,6 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.neovim = {
     enable = true;
 
@@ -53,7 +56,6 @@
         config = builtins.readFile ./plugin/harpoon.lua;
       }
 
-
       cmp_luasnip
       cmp-nvim-lsp
       luasnip
@@ -66,14 +68,13 @@
       }
 
       {
-        plugin =black-metal-theme-neovim;
+        plugin = black-metal-theme-neovim;
         type = "lua";
         config = builtins.readFile ./plugin/colorscheme.lua;
       }
 
       plenary-nvim
       nui-nvim
-      
 
       telescope-fzf-native-nvim
       lualine-nvim
@@ -91,16 +92,16 @@
             p.tree-sitter-c
             p.tree-sitter-cpp
           ])
-          );
-          type = "lua";
-          config = builtins.readFile ./plugin/treesitter.lua;
-        }
+        );
+        type = "lua";
+        config = builtins.readFile ./plugin/treesitter.lua;
+      }
 
-        vim-nix
-        vim-multiple-cursors
-      ];
+      vim-nix
+      vim-multiple-cursors
+    ];
 
-      initLua = ''
+    initLua = ''
       vim.loader.enable()
       ${builtins.readFile ./options.lua}
 
@@ -111,6 +112,6 @@
       })
 
       vim.opt.signcolumn = "no"
-      '';
-    };
-  }
+    '';
+  };
+}

@@ -1,14 +1,15 @@
-{ config, pkgs, ... }:
-
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   mod = "Mod4";
-in
-  {
+in {
   home.packages = with pkgs; [
-    fuzzel 
-    swaybg 
-    swayidle 
-    swaylock 
+    fuzzel
+    swaybg
+    swayidle
+    swaylock
   ];
   wayland.windowManager.sway = {
     enable = true;
@@ -17,7 +18,7 @@ in
       modifier = mod;
 
       fonts = {
-        names = [ "Iosevka" ];
+        names = ["Iosevka"];
         size = 10.0;
       };
 
@@ -108,42 +109,31 @@ in
       };
 
       keybindings = {
-        "XF86AudioRaiseVolume" =
-          "exec pamixer -i 5 && pkill -SIGUSR1 i3status-rs";
+        "XF86AudioRaiseVolume" = "exec pamixer -i 5 && pkill -SIGUSR1 i3status-rs";
 
-        "XF86AudioLowerVolume" =
-          "exec pamixer -d 5 && pkill -SIGUSR1 i3status-rs";
+        "XF86AudioLowerVolume" = "exec pamixer -d 5 && pkill -SIGUSR1 i3status-rs";
 
-        "XF86AudioMute" =
-          "exec pamixer -t && pkill -SIGUSR1 i3status-rs";
+        "XF86AudioMute" = "exec pamixer -t && pkill -SIGUSR1 i3status-rs";
 
-        "XF86AudioMicMute" =
-          "exec pamixer --default-source -t && pkill -SIGUSR1 i3status-rs";
+        "XF86AudioMicMute" = "exec pamixer --default-source -t && pkill -SIGUSR1 i3status-rs";
 
-        "XF86MonBrightnessUp" =
-          "exec brightnessctl set 5%+";
+        "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
 
-        "XF86MonBrightnessDown" =
-          "exec brightnessctl set 5%-";
+        "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
 
-        "${mod}+Return" =
-          "exec alacritty";
+        "${mod}+Return" = "exec alacritty";
 
-        "${mod}+Shift+q" =
-          "kill";
+        "${mod}+Shift+q" = "kill";
 
-        "${mod}+d" =
-          "exec fuzzel";
+        "${mod}+d" = "exec fuzzel";
 
-        "${mod}+b" =
-          "exec swaymsg bar mode toggle";
+        "${mod}+b" = "exec swaymsg bar mode toggle";
 
-        "${mod}+Control+s" =
-          "exec systemctl suspend";
-          "${mod}+j" = "focus next";
-          "${mod}+k" = "focus prev";
-          # "${mod}+l" = "focus  right";
-          # "${mod}+h" = "focus right";
+        "${mod}+Control+s" = "exec systemctl suspend";
+        "${mod}+j" = "focus next";
+        "${mod}+k" = "focus prev";
+        # "${mod}+l" = "focus  right";
+        # "${mod}+h" = "focus right";
 
         "${mod}+Left" = "focus left";
         "${mod}+Down" = "focus down";
@@ -181,38 +171,24 @@ in
         "${mod}+9" = "workspace number 9";
         "${mod}+0" = "workspace number 10";
 
-        "${mod}+Shift+1" =
-          "move container to workspace number 1";
-        "${mod}+Shift+2" =
-          "move container to workspace number 2";
-        "${mod}+Shift+3" =
-          "move container to workspace number 3";
-        "${mod}+Shift+4" =
-          "move container to workspace number 4";
-        "${mod}+Shift+5" =
-          "move container to workspace number 5";
-        "${mod}+Shift+6" =
-          "move container to workspace number 6";
-        "${mod}+Shift+7" =
-          "move container to workspace number 7";
-        "${mod}+Shift+8" =
-          "move container to workspace number 8";
-        "${mod}+Shift+9" =
-          "move container to workspace number 9";
-        "${mod}+Shift+0" =
-          "move container to workspace number 10";
+        "${mod}+Shift+1" = "move container to workspace number 1";
+        "${mod}+Shift+2" = "move container to workspace number 2";
+        "${mod}+Shift+3" = "move container to workspace number 3";
+        "${mod}+Shift+4" = "move container to workspace number 4";
+        "${mod}+Shift+5" = "move container to workspace number 5";
+        "${mod}+Shift+6" = "move container to workspace number 6";
+        "${mod}+Shift+7" = "move container to workspace number 7";
+        "${mod}+Shift+8" = "move container to workspace number 8";
+        "${mod}+Shift+9" = "move container to workspace number 9";
+        "${mod}+Shift+0" = "move container to workspace number 10";
 
-        "${mod}+Shift+c" =
-          "reload";
+        "${mod}+Shift+c" = "reload";
 
-        "${mod}+Shift+r" =
-          "restart";
+        "${mod}+Shift+r" = "restart";
 
-        "${mod}+Shift+e" =
-          "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit Sway?' -B 'Yes, exit Sway' 'swaymsg exit'";
+        "${mod}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit Sway?' -B 'Yes, exit Sway' 'swaymsg exit'";
 
-        "${mod}+r" =
-          "mode resize";
+        "${mod}+r" = "mode resize";
       };
 
       modes = {
@@ -240,12 +216,11 @@ in
           position = "top";
 
           fonts = {
-            names = [ "Iosevka" ];
+            names = ["Iosevka"];
             size = 12.0;
           };
 
-          statusCommand =
-            "i3status-rs ~/.config/i3status-rust/config-default.toml";
+          statusCommand = "i3status-rs ~/.config/i3status-rust/config-default.toml";
 
           colors = {
             background = "#0a0a0a";

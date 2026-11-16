@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   wayland.windowManager.hyprland = {
     enable = false;
 
@@ -38,4 +40,4 @@
 
   home.file.".config/hypr/hyprlock.conf".source =
     ../../../config/hypr/hyprlock.conf;
-} 
+}

@@ -1,18 +1,20 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 
-  services.xserver.videoDrivers = ["amdgpu" "nvidia" ];
+  services.xserver.videoDrivers = ["amdgpu" "nvidia"];
 
   hardware.nvidia = {
     modesetting.enable = true;
 
     powerManagement.enable = true;
-    powerManagement.finegrained =true;
+    powerManagement.finegrained = true;
 
     open = true;
 
@@ -30,5 +32,4 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-
 }

@@ -1,8 +1,6 @@
-{ pkgs,... }:
-
-{
+{pkgs, ...}: {
   programs.bash.enable = true;
-  users.users."hex"= {
+  users.users."hex" = {
     isNormalUser = true;
     shell = pkgs.bash;
     description = "hex";
@@ -13,7 +11,7 @@
       "video"
       "render"
     ];
-    packages = with pkgs;[
+    packages = with pkgs; [
       kdePackages.kate
     ];
   };

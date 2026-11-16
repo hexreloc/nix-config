@@ -1,9 +1,6 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   homeModules = import ../../modules/home-manager;
-in
-{
+in {
   stylix.overlays.enable = false;
   home.username = "hex";
   home.homeDirectory = "/home/hex";
@@ -11,7 +8,6 @@ in
   imports = builtins.attrValues homeModules;
 
   home.packages = with pkgs; [
-
     #mardkownbegin
     pandoc
     #mardkownend

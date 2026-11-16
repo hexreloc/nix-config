@@ -93,7 +93,7 @@
         {
           type = "disk";
           key = "│ 󰋊  Disk      │";
-          folders = [ "/" ];
+          folders = ["/"];
         }
 
         {
@@ -116,4 +116,3 @@
     };
   };
 }
-

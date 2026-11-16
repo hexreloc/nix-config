@@ -56,7 +56,6 @@
               stylix.homeModules.stylix
             ];
 
-
             extraSpecialArgs = {
               inherit inputs outputs;
             };

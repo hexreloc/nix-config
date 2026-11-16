@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   services.xserver = {
     enable = true;
     windowManager.openbox.enable = true;
@@ -21,7 +23,6 @@
     lm_sensors
     upower
     kitty
-
   ];
 
   services.printing.enable = true;

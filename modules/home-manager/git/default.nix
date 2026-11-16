@@ -24,9 +24,8 @@
     };
 
     extraConfig = ''
-    Host github.com
-    AddKeysToAgent yes
+      Host github.com
+      AddKeysToAgent yes
     '';
   };
 }
-

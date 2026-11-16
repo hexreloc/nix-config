@@ -5,7 +5,7 @@
   boot = import ./boot;
   desktop = import ./desktop;
   fonts = import ./fonts;
-   game = import ./game;
+  game = import ./game;
   i3 = import ./i3;
   locale = import ./locale;
   network = import ./network;
