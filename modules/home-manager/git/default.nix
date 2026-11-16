@@ -1,4 +1,5 @@
 {
+  services.ssh-agent.enable = true;
   programs.git = {
     enable = true;
 
@@ -21,6 +22,11 @@
       identityFile = "~/.ssh/github";
       identitiesOnly = true;
     };
+
+    extraConfig = ''
+    Host github.com
+    AddKeysToAgent yes
+    '';
   };
 }
 

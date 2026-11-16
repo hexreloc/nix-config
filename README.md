@@ -18,7 +18,7 @@ Wallpapers included in `wallpapers/`:
 |---|---|
 | **Host** | `victus` (HP Victus) |
 | **User** | `hex` |
-| **Session** | Hyprland (Wayland) |
+| **Session** | Plasma 6 (Wayland), Hyprland (Wayland), Sway, i3 |
 | **Terminal** | Alacritty, Kitty, Foot |
 | **Editor** | Neovim, Helix |
 | **Shell** | Fish |
@@ -61,8 +61,8 @@ Wallpapers included in `wallpapers/`:
 │   │   └── default.nix
 │   └── nixos/               # Reusable NixOS modules
 │       ├── audio, boot, desktop, fonts, game, i3, locale,
-│   │   │   network, nvidia, tlp, users, ...
-│   │   └── default.nix
+│       │   network, nvidia, plasma, tlp, users, ...
+│       └── default.nix
 ├── overlays/
 │   └── default.nix          # Nixpkgs overlays
 ├── pkgs/
@@ -106,4 +106,5 @@ nix fmt
 
 - Stylix is used for color scheme management; themes live in `modules/home-manager/theme/`.
 - The Hyprland config launches `dunst`, `waybar`, `hypridle`, and `awww` (animated wallpaper) on session start.
+- Plasma 6 uses Plasma Login Manager and defaults to Wayland; choose a different session at the login screen if needed.
 - An HP Victus fan control script lives at `config/hpvictusfan/fan.sh`.

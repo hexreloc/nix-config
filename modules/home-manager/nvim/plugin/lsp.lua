@@ -98,3 +98,30 @@ vim.lsp.config('pyright', {
 	capabilities = capabilities,
 })
 
+
+-- Keep diagnostics, but reduce visual noise.
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = false,
+    underline = false,
+    update_in_insert = false,
+    severity_sort = true,
+    float = {
+        border = "rounded",
+        source = "if_many",
+    },
+})
+
+-- Show diagnostic details only when requested.
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, {
+    desc = "Show diagnostics",
+})
+
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {
+    desc = "Previous diagnostic",
+})
+
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {
+    desc = "Next diagnostic",
+})
+

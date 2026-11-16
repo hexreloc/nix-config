@@ -6,7 +6,7 @@
   dunst = import ./dunst;
   fastfetch = import ./fastfetch;
   files = import ./files;
-  fish = import ./fish;
+  bash = import ./bash;
   flameshot = import ./flameshot;
   foot = import ./foot;
   git = import ./git;

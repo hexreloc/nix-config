@@ -2,23 +2,23 @@
 
 {
   environment.systemPackages = with pkgs; [
-    heroic
+     heroic
+    
+     wineWow64Packages.staging
+     winetricks
 
-    wineWow64Packages.staging
-    winetricks
-
-    protonup-qt
-
-    gamemode
-    gamescope
-    mangohud
-
-    vulkan-tools
+     protonup-qt
+    
+     gamemode
+     gamescope
+     mangohud
+    
+     vulkan-tools
   ];
 
-  programs.gamemode.enable = true;
-
-  programs.gamescope.enable = true;
+   programs.gamemode.enable = true;
+  
+   programs.gamescope.enable = true;
 
   programs.steam = {
     enable = true;

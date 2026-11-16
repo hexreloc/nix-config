@@ -25,16 +25,8 @@
 
     inherit (self) outputs;
   in {
-    # Custom packages from ./pkgs, buildable with `nix build .#<name>`
-    packages.${system} = import ./pkgs nixpkgs.legacyPackages.${system};
-
     # Formatter, available through `nix fmt`
     formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
-
-    # Overlays from ./overlays
-    overlays = import ./overlays {
-      inherit inputs;
-    };
 
     # Reusable modules from ./modules
     nixosModules = import ./modules/nixos;
@@ -60,10 +52,10 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-
             sharedModules = [
               stylix.homeModules.stylix
             ];
+
 
             extraSpecialArgs = {
               inherit inputs outputs;

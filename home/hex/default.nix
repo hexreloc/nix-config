@@ -1,34 +1,37 @@
-{ pkgs, inputs, outputs, ... }:
+{ pkgs, ... }:
 
+let
+  homeModules = import ../../modules/home-manager;
+in
 {
-  imports = [
-    inputs.zen-browser.homeModules.twilight
-  ] ++ (builtins.attrValues outputs.homeManagerModules);
-
+  stylix.overlays.enable = false;
   home.username = "hex";
   home.homeDirectory = "/home/hex";
 
-  programs.zen-browser = {
-    enable = true;
-  };
-
- 
+  imports = builtins.attrValues homeModules;
 
   home.packages = with pkgs; [
-    # minecraft
-    temurin-bin
-    libX11
-    libXext
-    libXi
-    libXrender
-    libXrandr
-    libXxf86vm
-    libXtst
-    libxcb
-    alsa-lib
 
+    #mardkownbegin
+    pandoc
+    #mardkownend
+
+    # latexstuffsbegin
+    mupdf
+    texliveFull
+    # latexstuffsend
+
+    #prgramstuffbegin
+    gcc16
+    gdb
+    cmake
+    python3
+    #prgramstuffend
+
+    ghostty
+    gammastep
+    emacs
     telegram-desktop
-    spotify
     fd
     obsidian
     firefox
@@ -43,13 +46,12 @@
     brave
     fzf
     vim
-    gcc
-    cmake
-    python3
     obs-studio
     mpv
     nautilus
+    qbittorrent
   ];
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;

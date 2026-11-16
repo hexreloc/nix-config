@@ -66,13 +66,14 @@
       }
 
       {
-        plugin =catppuccin-nvim;
+        plugin =black-metal-theme-neovim;
         type = "lua";
         config = builtins.readFile ./plugin/colorscheme.lua;
       }
 
       plenary-nvim
       nui-nvim
+      
 
       telescope-fzf-native-nvim
       lualine-nvim
@@ -100,6 +101,7 @@
       ];
 
       initLua = ''
+      vim.loader.enable()
       ${builtins.readFile ./options.lua}
 
       vim.opt.guicursor = "n-v-c:block,i-ci-ve:block,r-cr:block,o:block"

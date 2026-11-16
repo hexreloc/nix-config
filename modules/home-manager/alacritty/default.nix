@@ -9,7 +9,7 @@
           y = 8;
         };
 
-        decorations = "None";
+        #decorations = "None";
         dynamic_padding = false;
         opacity = 1.0;
       };

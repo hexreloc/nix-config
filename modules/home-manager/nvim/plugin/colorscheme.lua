@@ -1,5 +1,5 @@
-local color= require("catppuccin")
+-- local color= require("black-metal-theme")
+--
+-- color.setup({})
 
-color.setup({})
-
-vim.cmd.colorscheme("catppuccin-mocha")
+vim.cmd.colorscheme("burzum")

@@ -1,5 +1,5 @@
 {
-  programs.fish = {
+  programs.bash = {
     enable = true;
 
     shellAliases = {
@@ -11,24 +11,23 @@
       c = "clear";
     };
 
-    interactiveShellInit = ''
-      function vf
-        set dir (find $HOME -type d -not -path '*/.*' 2>/dev/null | fzf)
-        or return
+    initExtra = ''
+      vf() {
+        local dir
+        dir=$(find "$HOME" -type d -not -path '*/.*' 2>/dev/null | fzf) || return
         cd "$dir"
-      end
+      }
 
-      function vn
-        set file (find $HOME -type f -not -path '*/.*' 2>/dev/null | fzf)
-        or return
+      vn() {
+        local file
+        file=$(find "$HOME" -type f -not -path '*/.*' 2>/dev/null | fzf) || return
         nvim "$file"
-      end
+      }
     '';
   };
 
   programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
+    enable = false;
+    enableBashIntegration = false;
   };
 }
-

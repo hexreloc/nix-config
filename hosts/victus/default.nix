@@ -7,10 +7,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = builtins.attrValues outputs.overlays;
-
   services.upower.enable = true;
-  services.displayManager.ly.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

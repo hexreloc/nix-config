@@ -1,10 +1,10 @@
 { pkgs,... }:
 
 {
-    programs.fish.enable = true;
+  programs.bash.enable = true;
   users.users."hex"= {
     isNormalUser = true;
-    shell = pkgs.fish;
+    shell = pkgs.bash;
     description = "hex";
     extraGroups = [
       "wheel"

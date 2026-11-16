@@ -27,12 +27,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setqflist, {
   desc = 'Open diagnostics',
 })
 
-vim.keymap.set('n', '<C-c>', function()
-  vim.cmd('Ntree')
-end, {
-  desc = 'Open Ntree',
-})
-
 vim.keymap.set('n', '<leader>qc', function()
   vim.cmd('cclose')
 end, {
