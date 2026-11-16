@@ -62,6 +62,4 @@ Build custom packages:
 
 ## Notes
 - Stylix is used for color scheme management; themes live in `modules/home-manager/theme/`.
-- The Hyprland config launches `dunst`, `waybar`, `hypridle`, and `awww` (animated wallpaper) on session start.
-- Plasma 6 uses Plasma Login Manager and defaults to Wayland; choose a different session at the login screen if needed.
 - An HP Victus fan control script lives at `config/hpvictusfan/fan.sh`.
